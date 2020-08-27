@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		 crossorigin="anonymous">
+		
+		<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		 crossorigin="anonymous">
+		 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			*{
+				padding: 0;margin: 0;}
+			
+			nav {
+				width: 100%;
+				height: 40px;
+				background-color: #F2F2F2;
+			}
+			
+			.oimg-hua {
+				width: 1000px;
+				height: 40px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			.oimg-hua img {
+				position: absolute;
+				left: 0;
+				top: 5px;
+				width: 100px;
+				height: 30px;
+			}
+			
+			.oimg-hua span {
+				position: absolute;
+				left: 105px;
+				line-height: 40px;
+				width: 100px;
+				height: 40px;
+				font-size: 14px;
+				font-weight: 700;
+			}
+			.banner{
+				width: 100%;
+				height: 600px;
+				margin-top: 50px;
+			}
+			.banner-1{
+				width: 100%;
+				height:60px;
+				line-height: 60px;
+				font-size: 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.banner-2{
+				
+				width: 70%;
+				height: 400px;
+				margin: 0 auto;
+				/* background-color: #6B6B6B; */
+				display: flex;
+				margin-top:20px;
+				justify-content: space-around; 
+			}
+			.banner-2-L{
+				width: 45%;
+				height: 400px;
+				/* background-color: #000000; */
+			}
+			.banner-2-R{
+				width: 45%;
+				height: 400px;
+				/* background-color: #000000; */
+			}
+			.banner-2-L1{
+				width: 100%;
+				height: 300px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.banner-2-Z{
+				width: 2px;
+				height: 60%;
+				background-color: rgba(0,0,0,.2);
+			}	
+			.banner-2-L1 img{
+				width: 150px;
+				height: 150px;
+				display: block;
+				border: 20px solid rgba(0,0,0,.2);
+			}
+			.banner-2-L span{
+				display: block;
+				font-size: 12px;
+				width: 100%;
+				text-align: center;
+			}
+			.form{
+				width: 60%;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			#sumit1 {
+				width: 200px;
+				height: 40px;
+				margin-left: 30px;
+				/* margin: 0 auto; */
+				margin-top: 50px;
+			}
+			.form-he{
+				margin-top: 30px;
+				position: relative;
+			}
+			footer{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 100px;
+				background-color: #F2F2F2;
+			}
+			.footer-a1{
+				width: 60%;
+				height:50px;
+				margin: 0 auto;
+			}
+			.footer-a1 ul{
+				width: 100%;
+				height: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.footer-a1 ul li{
+				font-size: 12px;
+				height: 15px;
+				list-style: none;
+				padding: 0 10px;
+				text-align: center;
+				border-right: 1px solid black;
+				line-height: 15px;
+			}
+			.footer-a2{
+				width: 100%;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				line-height: 40px;
+				font-size: 10px;
+			}
+			#ospan1,#ospan2,#ospan3 {
+				width: 200px;
+				height: 35px;
+				text-align: left;
+				display: block;
+				/* background-color: #4169E1; */
+				font-size: 12px;
+				position: absolute;
+				right: -200px;
+				top: 0;
+			}
+			
+			.aa1{
+				width: 10px;
+				height: 40px;
+				line-height: 35px;
+				display: none;
+				position: absolute;
+				top: 5px;
+				right: -20px;
+			}
+			.form-zhuce{
+				font-size: 15px;
+				width: 90%;
+				height: 50px;
+				text-align: center;
+				margin-top: 30px;
+				display: flex;
+				justify-content: center;
+			}
+			.form-zhuce span{
+				display: block;
+				width: 200px;
+				height: 40px;
+				background-color: #CA151D;
+				color: white;
+				line-height: 40px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="oimg-hua"><img src="img/HUAWEI.svg"><span>华为商城</span></div>
+		</nav>
+		<div class="banner">
+			<div class="banner-1"><span>华为账号登录</span></div>
+			<div class="banner-2">
+				<div class="banner-2-L">
+					<div class="banner-2-L1">
+						<img src="img/erweima.png">
+					</div>
+					<span>若您使用华为手机，请进入"<a href="#">设置</a>">"<a href="#">华为账号</a>"扫码登录</span>
+				</div>
+				<div class="banner-2-Z"></div>
+				<div class="banner-2-R">
+					<div class="form">
+						<div class="form-group form-he">
+							<input type="text" class="form-control" placeholder="账号" name="ousername" id="oin2"><span id="ospan2"></span>
+						</div>
+						<div class="form-group form-he">
+							<input type="password" class="form-control" placeholder="密码" name="opwd" id="oin3"><span id="ospan3"></span>
+						</div>
+						<div class="form-sumit1">
+							<input type="submit" class="btn btn-primary " id="sumit1" value="登录" id="oin4">
+						</div>
+						<div class="form-zhuce">
+							<span>去注册</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-a1">
+				<ul>
+					<li>华为账号与云空间用户协议</li>
+					<li>关于华为账号与云空间隐私的声明</li>
+					<li>常见问题</li>
+					<li>Cookies</li>
+				</ul>
+			</div>
+			<div class="footer-a2"><span>@liuyabing</span></div>
+		</footer>
+	</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+	$(".form-zhuce span").click(function(){
+		 var v = parseUrl(); //解析所有参数
+		 if(v=="")
+		 {
+			 
+		} 
+		else{
+			location.href="zhuce.html?dID="+v['dID'];
+		}
+	})
+	let ot2,ot3;
+	$("#oin2").blur(function() {
+		let str = $("#oin2").val();
+		let re = /^[a-z0-9_-]{6,16}$/;
+		if (re.test(str) == true) {
+			$("#ospan2").html("");
+			ot2 = true;
+		} else {
+			$("#ospan2").html("用户名不正确，应为字母数字下划线构成,长度为6~16");
+		}
+	})
+	$("#oin3").blur(function() {
+		let str = $("#oin3").val();
+		let re = /^[a-z0-9_-]{6,18}$/;
+		if (re.test(str) == true) {
+			$("#ospan3").html("");
+			ot3 = true;
+		} else {
+			$("#ospan3").html("密码格式不正确,应为字母数字下划线构成,长度为6~16");
+		}
+	})
+	$("#sumit1").click(function(e) { 
+			let str = $("#oin2").val();
+			let re = /^[a-z0-9_-]{6,16}$/;
+			if (re.test(str) == true) {
+				$("#ospan2").html("");
+				ot2 = true;
+			} else {
+				$("#ospan2").html("用户名不正确，应为字母数字下划线构成,长度为6~16");
+			}
+		
+		
+			let str1 = $("#oin3").val();
+			let re1 = /^[a-z0-9_-]{6,18}$/;
+			if (re1.test(str1) == true) {
+				$("#ospan3").html("");
+				ot3 = true;
+			} else {
+				$("#ospan3").html("密码格式不正确,应为字母数字下划线构成,长度为6~16");
+			}
+		
+		if ( ot2 == true && ot3 == true) {
+			$.ajax({
+			   type: "POST",
+			   url: "php/logn.php",
+			   data: "ousername=" + $("#oin2").val() + "&opwd=" + $("#oin3").val(),
+			   success: function(msg){
+			     // $("#ospan3").html(msg);
+				 if(msg=="0")
+				 {
+					 $("#ospan3").html("密码或用户名不正确");
+				 }
+				 if(msg=="1"){
+					 
+					 sessionStorage=str;
+					 // console.log(sessionStorage);
+					 alert("登陆成功");
+					 sessionStorage.setItem("username",str);
+			
+					 window.history.back(-1); 
+					 
+				 }
+			   }
+			});
+		}
+		else{
+			e.preventDefault();
+			
+		}
+	});
+	
+	
+	function parseUrl() {
+		var url = location.href;
+		var i = url.indexOf('?');
+		if (i == -1) return "";
+		var querystr = url.substr(i + 1);
+		var arr1 = querystr.split('&');
+		var arr2 = new Object();
+		for (i in arr1) {
+			var ta = arr1[i].split('=');
+			arr2[ta[0]] = ta[1];
+		}
+		return arr2;
+	}
+</script>

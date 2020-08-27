@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/shop_top.css" />
+		<link rel="stylesheet" type="text/css" href="css/shop.css"/>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="header_1">
+				<ul>
+					<li>
+						<a href="#">首页</a>
+						<a href="#">华为官网</a>
+						<a href="#">荣耀官网</a>
+						<a href="#">花粉俱乐部</a>
+						<a href="#">企业购</a>
+						<a href="#">dssdsd</a>
+						<a href="#">更多精彩</a>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#">请登录</a>
+						<a href="#">注册</a>
+						<a href="#">我的订单</a>
+						<a href="#">客户服务</a>
+						<a href="#">网站导航</a>
+						<a href="#">手机版</a>
+						<span><a href="#">购物车(0)</a></span>
+					</li>
+				</ul>
+			</div>
+			<div class="header_2">
+				<ul>
+					<li><img src="img/x9a6U8WW0bhrA7u0FIlY.png"></li>
+					<li class="glyphicon glyphicon-th-list">全部商品分类</li>
+					<li>华为专区</li>
+					<li>荣耀专区</li>
+					<li>华为P40</li>
+					<li>荣耀30系列</li>
+					<li>安心居家</li>
+					<li>
+						<input type="text" name="" id="" value="" class="glyphicon glyphicon-search" />
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="zhong">
+			<div class="banner">
+			<div class="banner-top">
+				<span class="glyphicon glyphicon-exclamation-sign">您还没有登录！登录后可查看之前加入的商品</span> 
+				<div class="obtn">登录</div>
+			</div>
+			<div class="banner-table">
+				<ul class="ta-top">
+					<li><input type="checkbox"  class="quanxuan"><span  class="oquan">全选</span> </li>
+					<li>商品</li>
+					<li>单价</li>
+					<li>数量</li>
+					<li>小计</li>
+					<li>操作</li>
+				</ul>
+			</div>
+			
+			<!-- 需要渲染的商品详情页 -->
+			<div class="osss"> 
+				
+			</div>
+			
+			
+		</div>
+		<div class="dibu1">
+			<div class="foot">
+				<div><input type="checkbox" class="quanxuan"> <span class="oquan">全选</span> <span>删除</span> </div>
+				<div>
+					<div class="foot-zo">
+						<p>总计:￥<span class="zo">0</span> </p>
+						<p>共<span class="la">0</span>件商品 </p>
+					</div>
+					<div class="foot-liji">
+						立即结算
+					</div>
+			   	</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/zi/shop.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/zi/shouxuan.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(".obtn").click(function(){
+		location.href="Logn.html";
+	})
+	var v = parseUrl(); //解析所有参数
+	if (v != "") {
+		$(".banner-top").css({display:"none"});
+		let userName = v['username'];
+		$.ajax({
+			type: "POST",
+			url: "php/shop.php",
+			data: "ousername=" + userName,
+			success: function(msg) {
+				fun21(msg);
+			}
+		});
+	}
+	if(v==""){
+		$(".banner-top").css({display:"black"});
+		if(sessionStorage.username)
+		{
+			$(".banner-top").css({display:"none"});
+			$.ajax({
+				type: "POST",
+				url: "php/shop.php",
+				data: "ousername=" + sessionStorage.username,
+				success: function(msg) {
+					fun21(msg);
+				}
+			});
+		}
+	}
+	function odel1(){
+		$(".del").click(function(){
+		let oid=$(this).parent().find(".spid").html();
+		$(this).parent().remove();
+		$.ajax({
+			type: "POST",
+			url: "php/del.php",
+			data: "oid=" + oid,
+			success: function(msg) {
+				console.log(msg);
+				if(msg=="1")
+				{
+					alert("删除成功");
+					window.location.reload();
+				}
+				if(msg=="0")
+				{
+					alert("删除失败");
+				}
+			}
+		});
+	})
+	}
+	
+	
+</script>
